@@ -1,0 +1,235 @@
+PASS src/components/RecipePage.test.js
+PASS src/components/Home.test.js
+PASS src/components/Navbar.test.js
+PASS src/components/RecipeItem.test.js
+PASS src/components/App.test.js
+FAIL src/__tests__/validation.test.js
+  ● Console
+
+    console.error node_modules/jsdom/lib/jsdom/virtual-console.js:29
+      Error: Uncaught [TypeError: Cannot read property 'thumbnail' of undefined]
+          at reportException (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+          at invokeEventListeners (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:209:9)
+          at HTMLUnknownElementImpl._dispatch (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:119:9)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:82:17)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLElement-impl.js:30:27)
+          at HTMLUnknownElement.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:157:21)
+          at Object.invokeGuardedCallbackDev (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:195:16)
+          at invokeGuardedCallback (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:248:31)
+          at replayUnitOfWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:15578:5)
+          at renderRoot (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16381:11) TypeError: Cannot read property 'thumbnail' of undefined
+          at thumbnail (C:\Users\mathe\codenation\react-1\src\components\RecipePage.js:12:31)
+          at mountIndeterminateComponent (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:13600:13)
+          at beginWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:13924:16)
+          at performUnitOfWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16249:12)
+          at workLoop (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16287:24)
+          at HTMLUnknownElement.callCallback (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:145:14)
+          at invokeEventListeners (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:193:27)
+          at HTMLUnknownElementImpl._dispatch (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:119:9)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:82:17)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLElement-impl.js:30:27)
+          at HTMLUnknownElement.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:157:21)
+          at Object.invokeGuardedCallbackDev (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:195:16)
+          at invokeGuardedCallback (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:248:31)
+          at replayUnitOfWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:15578:5)
+          at renderRoot (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16381:11)
+          at performWorkOnRoot (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17220:7)
+          at performWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17128:7)
+          at performSyncWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17100:3)
+          at requestWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16988:5)
+          at scheduleWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16782:5)
+          at scheduleRootUpdate (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17470:3)
+          at updateContainerAtExpirationTime (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17497:10)
+          at updateContainer (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17524:10)
+          at ReactRoot.Object.<anonymous>.ReactRoot.render (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17786:3)
+          at C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17926:14
+          at unbatchedUpdates (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17351:10)
+          at legacyRenderSubtreeIntoContainer (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17922:5)
+          at Object.render (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17981:12)
+          at Object.render (C:\Users\mathe\codenation\react-1\node_modules\enzyme-adapter-react-16\build\ReactSixteenAdapter.js:314:114)
+          at new ReactWrapper (C:\Users\mathe\codenation\react-1\node_modules\enzyme\build\ReactWrapper.js:119:16)
+          at mount (C:\Users\mathe\codenation\react-1\node_modules\enzyme\build\mount.js:21:10)
+          at Object.test (C:\Users\mathe\codenation\react-1\src\__tests__\validation.test.js:84:25)
+          at Object.asyncJestTest (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+          at resolve (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\queueRunner.js:43:12)
+          at new Promise (<anonymous>)
+          at mapper (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+          at promise.then (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\queueRunner.js:73:41)
+          at process._tickCallback (internal/process/next_tick.js:68:7)
+    console.error node_modules/react-dom/cjs/react-dom.development.js:14389
+      The above error occurred in the <RecipePage> component:
+          in RecipePage (created by Route)
+          in Route (at App.js:37)
+          in Switch (at App.js:21)
+          in div (at App.js:19)
+          in div (at App.js:15)
+          in App (created by Route)
+          in Route (created by withRouter(App))
+          in withRouter(App) (at validation.test.js:86)
+          in Router (created by MemoryRouter)
+          in MemoryRouter (created by WrapperComponent)
+          in WrapperComponent
+      
+      Consider adding an error boundary to your tree to customize error handling behavior.
+      Visit https://fb.me/react-error-boundaries to learn more about error boundaries.
+    console.error node_modules/jsdom/lib/jsdom/virtual-console.js:29
+      Error: Uncaught [TypeError: Cannot read property 'thumbnail' of undefined]
+          at reportException (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\helpers\runtime-script-errors.js:66:24)
+          at invokeEventListeners (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:209:9)
+          at HTMLUnknownElementImpl._dispatch (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:119:9)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:82:17)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLElement-impl.js:30:27)
+          at HTMLUnknownElement.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:157:21)
+          at Object.invokeGuardedCallbackDev (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:195:16)
+          at invokeGuardedCallback (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:248:31)
+          at replayUnitOfWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:15578:5)
+          at renderRoot (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16381:11) TypeError: Cannot read property 'thumbnail' of undefined
+          at thumbnail (C:\Users\mathe\codenation\react-1\src\components\RecipePage.js:12:31)
+          at mountIndeterminateComponent (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:13600:13)
+          at beginWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:13924:16)
+          at performUnitOfWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16249:12)
+          at workLoop (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16287:24)
+          at HTMLUnknownElement.callCallback (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:145:14)
+          at invokeEventListeners (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:193:27)
+          at HTMLUnknownElementImpl._dispatch (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:119:9)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:82:17)
+          at HTMLUnknownElementImpl.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLElement-impl.js:30:27)
+          at HTMLUnknownElement.dispatchEvent (C:\Users\mathe\codenation\react-1\node_modules\jsdom\lib\jsdom\living\generated\EventTarget.js:157:21)
+          at Object.invokeGuardedCallbackDev (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:195:16)
+          at invokeGuardedCallback (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:248:31)
+          at replayUnitOfWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:15578:5)
+          at renderRoot (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16381:11)
+          at performWorkOnRoot (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17220:7)
+          at performWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17128:7)
+          at performSyncWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17100:3)
+          at requestWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16988:5)
+          at scheduleWork (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:16782:5)
+          at scheduleRootUpdate (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17470:3)
+          at updateContainerAtExpirationTime (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17497:10)
+          at updateContainer (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17524:10)
+          at ReactRoot.Object.<anonymous>.ReactRoot.render (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17786:3)
+          at C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17926:14
+          at unbatchedUpdates (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17351:10)
+          at legacyRenderSubtreeIntoContainer (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17922:5)
+          at Object.render (C:\Users\mathe\codenation\react-1\node_modules\react-dom\cjs\react-dom.development.js:17981:12)
+          at Object.render (C:\Users\mathe\codenation\react-1\node_modules\enzyme-adapter-react-16\build\ReactSixteenAdapter.js:314:114)
+          at new ReactWrapper (C:\Users\mathe\codenation\react-1\node_modules\enzyme\build\ReactWrapper.js:119:16)
+          at mount (C:\Users\mathe\codenation\react-1\node_modules\enzyme\build\mount.js:21:10)
+          at Object.test (C:\Users\mathe\codenation\react-1\src\__tests__\validation.test.js:95:25)
+          at Object.asyncJestTest (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+          at resolve (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\queueRunner.js:43:12)
+          at new Promise (<anonymous>)
+          at mapper (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+          at promise.then (C:\Users\mathe\codenation\react-1\node_modules\jest-jasmine2\build\queueRunner.js:73:41)
+          at process._tickCallback (internal/process/next_tick.js:68:7)
+    console.error node_modules/react-dom/cjs/react-dom.development.js:14389
+      The above error occurred in the <RecipePage> component:
+          in RecipePage (created by Route)
+          in Route (at App.js:37)
+          in Switch (at App.js:21)
+          in div (at App.js:19)
+          in div (at App.js:15)
+          in App (created by Route)
+          in Route (created by withRouter(App))
+          in withRouter(App) (at validation.test.js:97)
+          in Router (created by MemoryRouter)
+          in MemoryRouter (created by WrapperComponent)
+          in WrapperComponent
+      
+      Consider adding an error boundary to your tree to customize error handling behavior.
+      Visit https://fb.me/react-error-boundaries to learn more about error boundaries.
+
+  ● App › Click on recipe redirect to the right place
+
+    expect(received).toEqual(expected)
+
+    Expected: "/recipe/other-recipe"
+    Received: {"pathname": "/recipe/other-recipe", "recipe": {"href": "", "ingredients": "Other Ingredient", "thumbnail": "image.jpg", "title": "Other Recipe"}}
+
+      78 |         
+      79 |         const recipeRoute = wrapper.find('RecipeItem').at(1).find('Link').prop('to')
+    > 80 |         expect(recipeRoute).toEqual('/recipe/other-recipe')
+         |                             ^
+      81 |     })
+      82 | 
+      83 |     test('Render recipe in recipe route', () => {
+
+      at Object.toEqual (src/__tests__/validation.test.js:80:29)
+
+  ● App › Render recipe in recipe route
+
+    TypeError: Cannot read property 'thumbnail' of undefined
+
+      10 |         src={
+      11 |           location
+    > 12 |             ? location.recipe.thumbnail
+         |                               ^
+      13 |             : "https://via.placeholder.com/350x300"
+      14 |         }
+      15 |         alt="Recipe thumbnail"
+
+      at thumbnail (src/components/RecipePage.js:12:31)
+      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:13600:13)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:13924:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:16249:12)
+      at workLoop (node_modules/react-dom/cjs/react-dom.development.js:16287:24)
+      at renderRoot (node_modules/react-dom/cjs/react-dom.development.js:16366:7)
+      at performWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:17220:7)
+      at performWork (node_modules/react-dom/cjs/react-dom.development.js:17128:7)
+      at performSyncWork (node_modules/react-dom/cjs/react-dom.development.js:17100:3)
+      at requestWork (node_modules/react-dom/cjs/react-dom.development.js:16988:5)
+      at scheduleWork (node_modules/react-dom/cjs/react-dom.development.js:16782:5)
+      at scheduleRootUpdate (node_modules/react-dom/cjs/react-dom.development.js:17470:3)
+      at updateContainerAtExpirationTime (node_modules/react-dom/cjs/react-dom.development.js:17497:10)
+      at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:17524:10)
+      at ReactRoot.Object.<anonymous>.ReactRoot.render (node_modules/react-dom/cjs/react-dom.development.js:17786:3)
+      at node_modules/react-dom/cjs/react-dom.development.js:17926:14
+      at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:17351:10)
+      at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:17922:5)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:17981:12)
+      at Object.render (node_modules/enzyme-adapter-react-16/build/ReactSixteenAdapter.js:314:114)
+      at new ReactWrapper (node_modules/enzyme/build/ReactWrapper.js:119:16)
+      at mount (node_modules/enzyme/build/mount.js:21:10)
+      at Object.test (src/__tests__/validation.test.js:84:25)
+
+  ● App › Render to not  rend recipe in recipe route
+
+    TypeError: Cannot read property 'thumbnail' of undefined
+
+      10 |         src={
+      11 |           location
+    > 12 |             ? location.recipe.thumbnail
+         |                               ^
+      13 |             : "https://via.placeholder.com/350x300"
+      14 |         }
+      15 |         alt="Recipe thumbnail"
+
+      at thumbnail (src/components/RecipePage.js:12:31)
+      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:13600:13)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:13924:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:16249:12)
+      at workLoop (node_modules/react-dom/cjs/react-dom.development.js:16287:24)
+      at renderRoot (node_modules/react-dom/cjs/react-dom.development.js:16366:7)
+      at performWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:17220:7)
+      at performWork (node_modules/react-dom/cjs/react-dom.development.js:17128:7)
+      at performSyncWork (node_modules/react-dom/cjs/react-dom.development.js:17100:3)
+      at requestWork (node_modules/react-dom/cjs/react-dom.development.js:16988:5)
+      at scheduleWork (node_modules/react-dom/cjs/react-dom.development.js:16782:5)
+      at scheduleRootUpdate (node_modules/react-dom/cjs/react-dom.development.js:17470:3)
+      at updateContainerAtExpirationTime (node_modules/react-dom/cjs/react-dom.development.js:17497:10)
+      at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:17524:10)
+      at ReactRoot.Object.<anonymous>.ReactRoot.render (node_modules/react-dom/cjs/react-dom.development.js:17786:3)
+      at node_modules/react-dom/cjs/react-dom.development.js:17926:14
+      at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:17351:10)
+      at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:17922:5)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:17981:12)
+      at Object.render (node_modules/enzyme-adapter-react-16/build/ReactSixteenAdapter.js:314:114)
+      at new ReactWrapper (node_modules/enzyme/build/ReactWrapper.js:119:16)
+      at mount (node_modules/enzyme/build/mount.js:21:10)
+      at Object.test (src/__tests__/validation.test.js:95:25)
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       3 failed, 9 passed, 12 total
+Snapshots:   0 total
+Time:        4.309s, estimated 5s
+Ran all test suites.
