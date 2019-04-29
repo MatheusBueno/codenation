@@ -2,6 +2,7 @@ import React from "react";
 
 import PropTypes from "prop-types";
 import RecipeItem from "./RecipeItem";
+
 const Home = ({ recipes = [], searchString = "", match }) => (
   <div className="row">
     {recipes
@@ -10,7 +11,7 @@ const Home = ({ recipes = [], searchString = "", match }) => (
           recipe.title.toLowerCase().includes(searchString) ||
           recipe.ingredients.toLowerCase().includes(searchString)
       )
-      .map((recipe, key) =>
+      .map((recipe, key) => (
         <RecipeItem key={key} recipe={recipe} higlightText={searchString} />
       ))}
   </div>
