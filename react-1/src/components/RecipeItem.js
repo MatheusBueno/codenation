@@ -17,9 +17,7 @@ const handleHighlightText = (text, higlight) => {
 const RecipeItem = ({ recipe, higlightText }) => (
   <div className="col-sm-3 mt-4">
     {recipe && (
-      <Link
-        to={{ pathname: `/recipe/${slugify(recipe.title)}`, recipe: recipe }}
-      >
+      <Link to={`/recipe/${slugify(recipe.title)}`}>
         <div className="card">
           <img
             className="card-img-top img-fluid"

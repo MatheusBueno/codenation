@@ -2,23 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // TODO: Você deve verificar se a receita existe
-const RecipePage = ({ location }) =>
-  location ? (
+const RecipePage = ({ recipe }) =>
+  recipe ? (
     <div>
       <img
         className="card-img-top img-fluid"
-        src={
-          location
-            ? location.recipe.thumbnail
-            : "https://via.placeholder.com/350x300"
-        }
+        src={recipe ? recipe.thumbnail : "https://via.placeholder.com/350x300"}
         alt="Recipe thumbnail"
       />
       <div className="card-body">
-        <h5 className="card-title">{location && location.recipe.title}</h5>
+        <h5 className="card-title">{recipe && recipe.title}</h5>
         <p className="card-text">
           <strong>Ingredients: </strong>
-          {location && location.recipe.ingredients}
+          {recipe && recipe.ingredients}
         </p>
       </div>
     </div>

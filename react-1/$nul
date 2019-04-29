@@ -1,13 +1,12 @@
- FAIL  src\__tests__\validation.test.js
-  ● Test suite failed to run
+ PASS  src\__tests__\validation.test.js
+ PASS  src\components\App.test.js
+ PASS  src\components\Home.test.js
+ PASS  src\components\RecipePage.test.js
+ PASS  src\components\Navbar.test.js
+ PASS  src\components\RecipeItem.test.js
 
-    Cannot find module '../components/App' from 'validation.test.js'
-      
-      at Resolver.resolveModule (node_modules/jest-resolve/build/index.js:179:17)
-      at Object.<anonymous> (src/__tests__/validation.test.js:21:283)
-
-Test Suites: 1 failed, 1 total
-Tests:       0 total
+Test Suites: 6 passed, 6 total
+Tests:       12 passed, 12 total
 Snapshots:   0 total
-Time:        2.485s, estimated 3s
+Time:        3.102s
 Ran all test suites.

@@ -1,10 +1,9 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import logo from "../logo.svg";
 
-const Navbar = ({ searchString, history }) => (
+const Navbar = ({ searchString, handleSearch }) => (
   <nav className="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
     <div className="navbar-brand col-1">
       <img src={logo} className="Navbar-logo" alt="logo" />
@@ -14,7 +13,7 @@ const Navbar = ({ searchString, history }) => (
       <input
         value={searchString}
         // TODO: onChange deve atualizar a URL
-        onChange={event => history.push(event.target.value)}
+        onChange={handleSearch}
         className="form-control col-9 mr-2"
         type="search"
         placeholder="Search"
@@ -28,4 +27,4 @@ Navbar.propTypes = {
   searchString: PropTypes.string
 };
 
-export default withRouter(Navbar);
+export default Navbar;
