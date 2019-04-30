@@ -8,10 +8,10 @@ const singout = (event, history) => {
   event.preventDefault();
 };
 
-const User = withRouter(({ history }) => (
+const User = ({ history }) => (
   <button className="btn" onClick={e => singout(e, history)}>
     Logout
   </button>
-));
+);
 
-export default User;
+export default withRouter(User);

@@ -1,17 +1,44 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-const RecipeItem = () => (
-    <div className="col-sm-3 mt-4">
+import { slugify } from "../helpers";
+
+const handleHighlightText = (text, higlight) => {
+  if (!higlight || higlight === "") return text;
+
+  // Regex that separate a array with higlight and normal text.
+  const partsWithHiglight = text.split(new RegExp(`(${higlight})`, "gi"));
+
+  return partsWithHiglight.map((text, key) =>
+    text.toLowerCase() === higlight ? <mark key={key}>{text}</mark> : text
+  );
+};
+
+const RecipeItem = ({ recipe, higlightText }) => (
+  <div className="col-sm-3 mt-4">
+    {recipe && (
+      <Link to={`/recipe/${slugify(recipe.title)}`}>
         <div className="card">
-            <img className="card-img-top img-fluid" src="https://via.placeholder.com/350x300" alt="" />
-            <div className="card-body">
-                <h5 className="card-title">TITLE HERE</h5>
-                <p className="card-text">
-                    <strong>Ingredients: </strong>INGREDIENTS HERE
-                </p>
-            </div>
+          <img
+            className="card-img-top img-fluid"
+            src={
+              recipe ? recipe.thumbnail : "https://via.placeholder.com/350x300"
+            }
+            alt="Recipe thumbnail"
+          />
+          <div className="card-body">
+            <h5 className="card-title">
+              {recipe && handleHighlightText(recipe.title, higlightText)}
+            </h5>
+            <p className="card-text">
+              <strong>Ingredients: </strong>
+              {recipe && handleHighlightText(recipe.ingredients, higlightText)}
+            </p>
+          </div>
         </div>
-    </div>
-)
+      </Link>
+    )}
+  </div>
+);
 
 export default RecipeItem;
