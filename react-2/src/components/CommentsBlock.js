@@ -1,27 +1,33 @@
-import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { isLogged, getUser } from '../services/loginService';
-import commentsService from '../services/commentsService';
+import { isLogged, getUser } from "../services/loginService";
+import commentsService from "../services/commentsService";
 
 class CommentsBlock extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       comments: this.getComments(),
-      comment: '',
-    }
+      comment: ""
+    };
   }
 
   getComments = () => commentsService.get(this.props.recipeSlug);
 
-  handleInsertInput = (event) => {
+  handleInsertInput = event => {
     const comment = event.target.value;
     this.setState({ comment: comment });
-  }
+  };
 
   handleRemoveComment = (e, comment) => {
+    if (!isLogged() || getUser().username !== comment.author) {
+      alert(
+        "Você só pode remover os seus comentários, verifique se está logado!"
+      );
+      return;
+    }
     const { recipeSlug } = this.props;
 
     try {
@@ -32,45 +38,48 @@ class CommentsBlock extends Component {
     }
 
     e.preventDefault();
-  }
+  };
 
-  onSubmit = (event) => {
+  createComment = event => {
+    if (!isLogged()) {
+      alert("Somente usuários logados podem comentar");
+      this.setState({ comment: "" });
+      return;
+    }
     const { comment } = this.state;
     const { recipeSlug } = this.props;
 
     try {
       commentsService.insert(recipeSlug, { comment });
-      this.setState({ comment: '', comments: this.getComments() });
-
-    } catch (error) { alert(error); }
+      this.setState({ comment: "", comments: this.getComments() });
+    } catch (error) {
+      alert(error);
+    }
 
     event.preventDefault();
-  }
-
+  };
 
   render() {
     return (
       <div className="text-left">
         <div className="my-3 p-3 bg-white rounded shadow-sm">
-          <h6 className="border-bottom border-gray pb-2 mb-0">
-            Comments                 </h6>
+          <h6 className="border-bottom border-gray pb-2 mb-0">Comments </h6>
 
           {this.renderRecipeList()}
         </div>
 
-        {isLogged() && this.renderRecipeInsert()}
-
+        {this.renderRecipeInsert()}
       </div>
-    )
+    );
   }
 
   renderRecipeList = () => {
     const { comments } = this.state;
-    return comments.length > 0 && (
+    return (
+      comments.length > 0 &&
       comments.map((comment, key) => this.renderComment(comment, key))
     );
-  }
-
+  };
 
   renderComment = (comment, key) => (
     <div key={key} className="Comment media text-muted pt-3">
@@ -82,18 +91,20 @@ class CommentsBlock extends Component {
 
       {this.renderTrashIcon({ comment })}
     </div>
-  )
+  );
 
   renderTrashIcon = ({ comment }) => {
-
-    return getUser().username === comment.author &&
-      (<FontAwesomeIcon icon="trash" onClick={(e) => this.handleRemoveComment(e, comment)} />)
-  }
+    return (
+      <FontAwesomeIcon
+        icon="trash"
+        onClick={e => this.handleRemoveComment(e, comment)}
+      />
+    );
+  };
 
   renderRecipeInsert = () => {
-
     return (
-      <form onSubmit={this.onSubmit}>
+      <form>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1"> Comment </label>
           <textarea
@@ -108,14 +119,14 @@ class CommentsBlock extends Component {
         </div>
         <button
           disabled={false}
-          type="submit"
+          onClick={this.createComment}
           className="btn btn-primary"
         >
           Submit
-              </button>
-      </form>);
-  }
+        </button>
+      </form>
+    );
+  };
 }
 
-
-export default CommentsBlock
+export default CommentsBlock;

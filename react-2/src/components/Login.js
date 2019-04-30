@@ -24,8 +24,6 @@ class Login extends Component {
     const { username, password } = this.state;
     const { history } = this.props;
 
-    console.log(event);
-
     try {
       login({ username, password });
       history.push("/");
