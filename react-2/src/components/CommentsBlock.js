@@ -19,15 +19,10 @@ class CommentsBlock extends Component {
   handleInsertInput = event => {
     const comment = event.target.value;
     this.setState({ comment: comment });
+    event.preventDefault();
   };
 
   handleRemoveComment = (e, comment) => {
-    if (!isLogged() || getUser().username !== comment.author) {
-      alert(
-        "Você só pode remover os seus comentários, verifique se está logado!"
-      );
-      return;
-    }
     const { recipeSlug } = this.props;
 
     try {
@@ -41,11 +36,6 @@ class CommentsBlock extends Component {
   };
 
   createComment = event => {
-    if (!isLogged()) {
-      alert("Somente usuários logados podem comentar");
-      this.setState({ comment: "" });
-      return;
-    }
     const { comment } = this.state;
     const { recipeSlug } = this.props;
 
@@ -75,10 +65,7 @@ class CommentsBlock extends Component {
 
   renderRecipeList = () => {
     const { comments } = this.state;
-    return (
-      comments.length > 0 &&
-      comments.map((comment, key) => this.renderComment(comment, key))
-    );
+    return comments.map((comment, key) => this.renderComment(comment, key));
   };
 
   renderComment = (comment, key) => (
@@ -89,26 +76,22 @@ class CommentsBlock extends Component {
         {comment.comment}
       </p>
 
-      {this.renderTrashIcon({ comment })}
+      {isLogged() && getUser().username === comment.author && (
+        <FontAwesomeIcon
+          icon="trash"
+          onClick={e => this.handleRemoveComment(e, comment)}
+        />
+      )}
     </div>
   );
 
-  renderTrashIcon = ({ comment }) => {
-    return (
-      <FontAwesomeIcon
-        icon="trash"
-        onClick={e => this.handleRemoveComment(e, comment)}
-      />
-    );
-  };
-
   renderRecipeInsert = () => {
     return (
-      <form>
+      <form onSubmit={this.createComment}>
         <div className="form-group">
           <label htmlFor="exampleInputEmail1"> Comment </label>
           <textarea
-            disabled={false}
+            disabled={!isLogged()}
             value={this.state.comment}
             onChange={this.handleInsertInput}
             required="required"
@@ -118,8 +101,8 @@ class CommentsBlock extends Component {
           />
         </div>
         <button
-          disabled={false}
-          onClick={this.createComment}
+          type="submit"
+          disabled={!isLogged()}
           className="btn btn-primary"
         >
           Submit

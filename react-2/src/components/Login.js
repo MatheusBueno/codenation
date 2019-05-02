@@ -22,11 +22,9 @@ class Login extends Component {
 
   loginUser = event => {
     const { username, password } = this.state;
-    const { history } = this.props;
 
     try {
       login({ username, password });
-      history.push("/");
     } catch (error) {
       alert(error);
     }
@@ -46,8 +44,15 @@ class Login extends Component {
     event.preventDefault();
   };
 
+  onSubmit = event => {
+    const { history } = this.props;
+    history.push("/");
+
+    event.preventDefault();
+  };
+
   render = () => (
-    <form className="form-signin">
+    <form className="form-signin" onSubmit={this.onSubmit}>
       <div className="text-center mb-4">
         <h1 className="h3 mb-3 font-weight-normal">Login / Register</h1>
       </div>
