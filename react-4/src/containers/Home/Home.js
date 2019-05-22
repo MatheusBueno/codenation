@@ -1,19 +1,40 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import Nav from '../../components/Nav/Nav';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import CharacterList from '../../components/CharacterList/CharacterList';
+import { loadCharacter } from '../../redux/characters/types';
 
-const Home = () => (
-  <Fragment>
-    <Nav />
-    <SearchBar onChange={e => console.log(e)} />
-    <CharacterList />
-  </Fragment>
-);
+const Home = ({ loadCharacter }) => {
+  const [characterName, setCharacterName] = useState('');
 
-function mapStateToProps(state) {
+  const handleSearch = e => {
+    const { value } = e.target;
+    setCharacterName(value);
+    console.log(characterName);
+
+    loadCharacter(value);
+  };
+
+  return (
+    <Fragment>
+      <Nav />
+      <SearchBar characterName={characterName} handleSearch={handleSearch} />
+      <CharacterList />
+    </Fragment>
+  );
+};
+
+function mapStateToProps() {
   return {};
 }
 
-export default connect(mapStateToProps)(Home);
+const mapDispathToProps = dispatch => bindActionCreators({ loadCharacter }, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispathToProps
+)(Home);

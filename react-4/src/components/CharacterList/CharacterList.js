@@ -1,22 +1,14 @@
 import React, { useEffect } from 'react';
-// import { connect } from 'react-redux';
+
+import { connect } from 'react-redux';
 
 import CharacterListItem from '../CharacterListItem/CharacterListItem';
 import { CharacterListContainer } from '../../styles/index';
-import CharacterService from '../../services/characters';
-import { marvelApi } from '../../config/config';
 
-const CharacterList = () => {
+const CharacterList = ({ charactersList }) => {
   useEffect(() => {
-    CharacterService.getCharacters({
-      timeStamp: Date.now(),
-      publicKey: marvelApi.publicKey,
-      name: 'thor',
-      limit: 35
-    })
-      .then(x => console.log(x))
-      .catch(e => console.log(e));
-  }, []);
+    console.log(charactersList);
+  }, [charactersList]);
 
   return (
     <CharacterListContainer>
@@ -27,9 +19,10 @@ const CharacterList = () => {
   );
 };
 
-// function mapStateToProps(state) {
-//   return {};
-// }
+function mapStateToProps(state) {
+  return {
+    charactersList: state.characters.characterList
+  };
+}
 
-// export default connect(mapStateToProps)(CharacterList);
-export default CharacterList;
+export default connect(mapStateToProps)(CharacterList);

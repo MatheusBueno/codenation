@@ -1,12 +1,13 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-
-const Input = (props) => <input {...props} />;
+const Input = props => <input {...props} />;
 
 class SearchForm extends Component {
   state = {};
 
   render() {
+    console.log(this.props);
+
     const {
       input,
       id,
@@ -29,7 +30,7 @@ class SearchForm extends Component {
           <Input
             {...input}
             id={id}
-            type={type || "text"}
+            type={type || 'text'}
             placeholder={placeholder}
             disabled={disabled}
             className={className}
