@@ -31,6 +31,18 @@ export const DetailButton = styled.button`
   font-size: 18px;
 `;
 
+export const EditButton = styled.button`
+  background: ${colors.v8};
+  width: 200px;
+  height: 40px;
+  border: none;
+  margin: 0px 20px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: ${colors.v2};
+  font-size: 18px;
+`;
+
 export const CharacterListContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -42,9 +54,21 @@ export const CharacterListItemContainer = styled.div`
   background: #fff;
 `;
 
+export const DetailPageContainer = styled.div`
+  padding: 30px;
+  display: block;
+  max-width: 900px;
+  margin: 0 auto;
+`;
+
 export const CharacterItemImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: ${props => (props.height ? props.height : '250px')};
   margin: 20px 0;
-  object-fit: contain;
+  object-fit: cover;
+`;
+
+export const Row = styled.div`
+  display: flex;
+  align-items: center;
 `;
