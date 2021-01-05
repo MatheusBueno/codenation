@@ -5,7 +5,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@rebass/grid": "^6.0.0-7",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "codenation-jest-score": "https://github.com/thecodenation/codenation-jest-score/tarball/master",
     "core-js": "^2.5.5",
